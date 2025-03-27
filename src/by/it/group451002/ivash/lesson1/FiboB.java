@@ -14,7 +14,6 @@ public class FiboB {
     }
 
     public static void main(String[] args) {
-        FiboB fibo = new FiboB();
         int n = 55555;
         System.out.printf("fastB(%d)=%d \n\t time=%d \n\n", n, fibo.fastB(n), fibo.time());
     }
