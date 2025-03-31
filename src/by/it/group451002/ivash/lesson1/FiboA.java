@@ -13,10 +13,10 @@ public class FiboA {
     }
 
     public static void main(String[] args) {
-        by.it.group451002.vysotski.lesson01.FiboA fibo = new by.it.group451002.vysotski.lesson01.FiboA();
+        FiboA fibo = new FiboA();
         int n = 33;
         System.out.printf("calc(%d)=%d \n\t time=%d \n\n", n, fibo.calc(n), fibo.time());
-        fibo = new by.it.group451002.vysotski.lesson01.FiboA();
+        fibo = new FiboA();
         n = 34;
         System.out.printf("slowA(%d)=%d \n\t time=%d \n\n", n, fibo.slowA(n), fibo.time());
     }
