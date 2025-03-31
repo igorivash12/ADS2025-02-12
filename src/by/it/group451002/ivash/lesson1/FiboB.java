@@ -14,7 +14,7 @@ public class FiboB {
     }
 
     public static void main(String[] args) {
-        by.it.group451002.vysotski.lesson01.FiboB fibo = new by.it.group451002.vysotski.lesson01.FiboB();
+        FiboB fibo = new FiboB();
         int n = 55555;
         System.out.printf("fastB(%d)=%d \n\t time=%d \n\n", n, fibo.fastB(n), fibo.time());
     }
