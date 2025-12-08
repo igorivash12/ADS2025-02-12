@@ -2,10 +2,6 @@ package by.it.group451002.ivash.lesson1;
 
 import java.math.BigInteger;
 
-/*
- * Вам необходимо выполнить рекурсивный способ вычисления чисел Фибоначчи
- */
-
 public class FiboA {
     private long startTime = System.currentTimeMillis();
 
@@ -13,10 +9,11 @@ public class FiboA {
     }
 
     public static void main(String[] args) {
+        FiboA fib = new FiboA();
         int n = 33;
-        System.out.printf("calc(%d)=%d \n\t time=%d \n\n", n, fibo.calc(n), fibo.time());
+        System.out.printf("calc(%d)=%d \n\t time=%d \n\n", n, fib.calc(n), fib.time());
         n = 34;
-        System.out.printf("slowA(%d)=%d \n\t time=%d \n\n", n, fibo.slowA(n), fibo.time());
+        System.out.printf("slowA(%d)=%d \n\t time=%d \n\n", n, fib.slowA(n), fib.time());
     }
 
     private long time() {
@@ -26,24 +23,18 @@ public class FiboA {
     }
 
     private int calc(int n) {
-        int var10000;
-        switch (n) {
-            case 0 -> var10000 = 0;
-            case 1 -> var10000 = 1;
-            default -> var10000 = this.calc(n - 1) + this.calc(n - 2);
-        }
-
-        return var10000;
+        return switch (n) {
+            case 0 -> 0;
+            case 1 -> 1;
+            default -> calc(n - 1) + calc(n - 2);
+        };
     }
 
     public BigInteger slowA(Integer n) {
-        BigInteger var10000;
-        switch (n) {
-            case 0 -> var10000 = BigInteger.ZERO;
-            case 1 -> var10000 = BigInteger.ONE;
-            default -> var10000 = this.slowA(n - 1).add(this.slowA(n - 2));
-        }
-
-        return var10000;
+        return switch (n) {
+            case 0 -> BigInteger.ZERO;
+            case 1 -> BigInteger.ONE;
+            default -> slowA(n - 1).add(slowA(n - 2));
+        };
     }
 }
